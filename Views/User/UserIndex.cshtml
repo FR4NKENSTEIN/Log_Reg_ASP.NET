@@ -1,0 +1,54 @@
+@model UindexView
+
+<div class="text-center">
+  <h1 class="hurray" >Welcome!</h1>
+</div>
+<div class="row">
+  <div class="col bg-primary rounded-lg mx-1 py-2 text-light">
+    <h4>Sign up</h4>
+    <form asp-action="Register" asp-controller="User" method="post">
+      <div class="form-group">
+        <label asp-for="UserNew.FirstName"></label>
+        <input class="form-control" type="text" asp-for="UserNew.FirstName">
+        <span class="text-warning" asp-validation-for="UserNew.FirstName"></span>
+      </div>
+      <div class="form-group">
+        <label asp-for="UserNew.LastName"></label>
+        <input class="form-control" type="text" asp-for="UserNew.LastName">
+        <span class="text-warning" asp-validation-for="UserNew.LastName"></span>
+      </div>
+      <div class="form-group">
+        <label asp-for="UserNew.Email"></label>
+        <input class="form-control" type="email" asp-for="UserNew.Email">
+        <span class="text-warning" asp-validation-for="UserNew.Email"></span>
+      </div>
+      <div class="form-group">
+        <label asp-for="UserNew.Password"></label>
+        <input class="form-control" type="text" asp-for="UserNew.Password">
+        <span class="text-warning" asp-validation-for="UserNew.Password"></span>
+      </div>
+      <div class="form-group">
+        <label asp-for="UserNew.Confirm"></label>
+        <input class="form-control" type="text" asp-for="UserNew.Confirm">
+        <span class="text-warning" asp-validation-for="UserNew.Confirm"></span>
+      </div>
+      <button type="submit" class="btn btn-outline-light">Register</button>
+    </form>
+  </div>
+  <div class="col bg-light rounded-lg mx-1 py-2 text-primary">
+    <h4>Sign in</h4>
+    <form asp-action="Login" asp-controller="User" method="post">
+      <div class="form-group">
+        <label asp-for="UserExist.Email"></label>
+        <input class="form-control" type="email" asp-for="UserExist.Email">
+        <span class="text-danger" asp-validation-for="UserExist.Email"></span>
+      </div>
+      <div class="form-group">
+        <label asp-for="UserExist.Password"></label>
+        <input class="form-control" type="text" asp-for="UserExist.Password">
+        <span class="text-danger" asp-validation-for="UserExist.Password"></span>
+      </div>
+      <button type="submit" class="btn btn-outline-primary">Login</button>
+    </form>
+  </div>
+</div>
